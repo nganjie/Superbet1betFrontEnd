@@ -1,0 +1,72 @@
+<div class="back-container">
+    <div class="row justify-content-between">
+        <div class="left-block d-flex flex-column justify-content-between align-items-center">
+            <div class="simulator-container d-flex flex-center justify-content-center">
+                <app-balls-container [ballContainerRadius]="simulatorRadius" [ballRadius]="ballRadius" [delay]="5000">
+                    <div class="circle-on-simulator" #ballGotten>
+                    </div>
+                </app-balls-container>
+            </div>
+            <div style="display: block; width: 96%;">
+                <div class="jackpot-box d-flex flex-column justify-content-between align-items-center">
+                    <span class="label">jackpot</span>
+                    <span class="jackpot-value">{{jackpot  | number:'1.0-0'}}</span>
+                </div>
+                <div class="tirage-box">
+                    <div class="d-flex flex-row justify-content-around">
+                        <div class="d-flex flex-column justify-content-around align-items-center">
+                            <span class="label">tirage</span>
+                            <span class="tirage-value">{{numtirage}}</span>
+                        </div>
+                        <div class="d-flex flex-column justify-content-around align-items-center">
+                            <span class="label">M</span>
+                            <span class="tirage-value">{{multiplicateur}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right-block d-flex flex-column justify-content-between align-items-center">
+            
+            <div class="tirage-balls d-flex flex-wrap justify-content-around align-items-center">
+                <div class="ball-result-empty d-flex justify-content-center align-items-center" *ngFor="let i of balls;">
+                    <div #ballsGotten>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid-nums-list" [@listAnimation]="numsList.length">
+                <div class="square-num" *ngFor="let i of numsList;" #allNums>
+                    <span class="square-num-text">{{i}}</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<!-- <input name="cle" [(ngModel)]="cle" class="form-control form-control-sm" mask="000-000" placeholder="000-000" type="text">  -->
+<!-- 
+<p-dialog [(visible)]="accesDialog" [modal]="true" [style]="{width: '450px'}" [draggable]="true" [closable]="false" [resizable]="false">
+    <ng-template pTemplate="header">
+            <span class="text-center" style="font-size: 32px;">Veillez saisir la cle:</span>
+    </ng-template>
+    <div class="modal-body">
+            <div class="row">
+                    <div class="col-md-12 text-center">
+                             <input name="cle" [(ngModel)]="cle" class="form-control form-control-sm" mask="000-000" placeholder="000-000" type="text"> 
+                    </div>
+            </div>
+    </div>
+    <ng-template pTemplate="footer">
+            <div class="row justify-content-center">   
+                <button class="btn btn-danger btn-sm mx-2" (click)="accesDialog=false;"> <i
+                            class="fa fa-times-circle" aria-hidden="true"></i>&nbsp;&nbsp;Continuer
+                </button>     
+            </div>
+    </ng-template>
+</p-dialog>
+
+ -->

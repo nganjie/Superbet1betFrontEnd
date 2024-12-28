@@ -1,0 +1,55 @@
+$blue: #0000ff;
+$silver: #dddbdb;
+$blue1: rgb(3, 3, 49);
+$blue2: rgb(27, 27, 171);
+table {
+    border-collapse: collapse;
+}
+
+.pari-box {
+    width: 100%;
+    margin: 5px;
+    tr.title,
+    th {
+        height: 4.8vh;
+        line-height: 4.5vh;
+        background-color: rgb(5, 143, 5);
+        box-shadow: inset 0 0 1vh 0.2vh white;
+        text-align: center;
+        font-family: 'Arial-Bold';
+        font-size: 2.5vh;
+        text-transform: uppercase;
+        color: white;
+        border-radius: 10px 10px 0 0;
+    }
+    .pari-box-item {
+        height: 4.2vh;
+        line-height: 4.2vh;
+        color: white;
+    }
+    .pari-box-item:nth-child(even) {
+        background-color: $blue1;
+    }
+    .pari-box-item:nth-child(odd) {
+        background-color: $blue2;
+    }
+    .pari-box-item:last-child td:last-child {
+        border-radius: 0 0 10px 0;
+    }
+    .pari-box-item:last-child td:first-child {
+        border-radius: 0 0 0 10px;
+    }
+    .num-cell {
+        width: 20%;
+        text-align: center;
+        font-size: 2vh;
+        font-weight: 500;
+        opacity: 0.85;
+    }
+    .cote-cell {
+        width: 80%;
+        text-align: center;
+        font-size: 3.2vh;
+        font-weight: 800;
+    }
+}

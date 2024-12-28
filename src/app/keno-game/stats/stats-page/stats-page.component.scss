@@ -1,0 +1,331 @@
+$red: #ff0000;
+$green: #00aa00;
+$blue: #0000ff;
+$yellow: #eecc00;
+$silver: #c0c0c0;
+.layout {
+    font-family: 'Roboto-Bold';
+    background-image: radial-gradient(rgb(10, 10, 116), rgb(2, 2, 34), rgb(5, 5, 104));
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+}
+
+.fs-small {
+    font-size: 1.3vw;
+    font-weight: 600;
+    color: white;
+}
+
+.label-title {
+    font-size: 1.2vw;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: white;
+}
+
+.faded {
+    mix-blend-mode: overlay;
+    //opacity: 0.7;
+}
+
+.tirages-block {
+    display: block;
+    margin-left: 0.5vw;
+    margin-right: 0.5vw;
+    width: 99vw;
+    height: 32.5vh;
+    background-color: #1c1c6e;
+    border-radius: 10px;
+}
+
+.square-num {
+    //background-color: white;
+    background-color: rgb(3, 3, 90);
+    //background-image: linear-gradient(black, blue);
+    width: 4vw;
+    height: 5.6vh;
+    font-family: 'Roboto';
+    font-size: 2.4vw;
+    font-weight: 600;
+    line-height: 6vh;
+    text-align: center;
+    margin: 0.6vh 0.2vw;
+    border-radius: 5px;
+    color: white;
+}
+
+.square-multi {
+    background-color: #0000ff;
+    box-shadow: inset 0 0 2vh 0.2vh white;
+    margin: 0.2vh 0.2vw;
+    width: 3.8vw;
+    height: 6vh;
+    font-size: 1.6vw;
+    line-height: 6vh;
+    text-align: center;
+    border-radius: 5px;
+    mix-blend-mode: color-dodge;
+    font-weight: 600;
+    color: white;
+}
+
+.tirage-row-data {
+    height: 6.5vh;
+}
+
+.tirage-row-data:nth-child(odd) .square-num {
+    background-color: rgb(4, 4, 133);
+}
+
+.tirage-row-data:nth-child(even) .square-num {
+    background-color: rgb(5, 5, 68);
+}
+
+.tirage-row-data:nth-child(odd) .fs-small {
+    background-color: rgb(16, 16, 145);
+    padding: 4px;
+    border-radius: 4px;
+}
+
+.tirage-row-data:nth-child(even) .fs-small {
+    background-color: rgb(11, 11, 94);
+    padding: 4px;
+    border-radius: 4px;
+}
+
+.multi-val {
+    font-size: 1.3vw;
+    font-weight: 600;
+    color: white;
+}
+
+.num-ball-val {
+    font-size: 2vw;
+    font-weight: 600;
+    color: white;
+}
+
+.ball {
+    height: 5vh;
+    width: 2.8vw;
+    border-radius: 50%;
+    font-size: 2.4vh;
+    font-weight: 600;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    //text-align: center;
+}
+
+.red {
+    background-color: $red;
+}
+
+.green {
+    background-color: $green;
+}
+
+.yellow {
+    background-color: $yellow;
+}
+
+.blue {
+    background-color: $blue;
+}
+
+.box-container {
+    border-radius: 10px;
+    display: block;
+    margin: 1vh 0.5vw;
+}
+
+.top-box {
+    height: 5vh;
+    line-height: 5vh;
+    background-color: rgb(5, 143, 5);
+    box-shadow: inset 0 0 1vh 0.2vh white;
+    text-align: center;
+    font-family: 'Arial-Bold';
+    font-size: 1.5vw;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: white;
+    border-radius: 10px 10px 0 0;
+}
+
+.body-box {
+    height: 13vh;
+}
+
+.box-item-col {
+    height: 13vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.box-item-col:nth-child(even) {
+    background-color: rgb(3, 3, 90);
+}
+
+.box-item-col:nth-child(odd) {
+    background-color: rgb(18, 18, 116);
+}
+
+.box-item-col:first-child {
+    border-radius: 0 0 0 10px;
+}
+
+.box-item-col:last-child {
+    border-radius: 0 0 10px 0;
+}
+
+.values {
+    width: 7.5%;
+}
+
+.value-onefive {
+    width: 13%;
+}
+
+.labels-1 {
+    width: 25%;
+}
+
+.labels-2 {
+    width: 10%;
+}
+
+.labels-3 {
+    width: 35%;
+}
+
+.right-block {
+    width: 56vw;
+}
+
+.left-block {
+    width: 44vw;
+}
+
+.right-block,
+.left-block {
+    display: block;
+}
+
+.jackpot-block {
+    border-radius: 10px;
+    height: 27vh;
+    margin: 1vh 0.5vw;
+    width: 28vw;
+    background-color: white;
+    .jackpot-label {
+        font-size: 2vw;
+        text-transform: uppercase;
+        color: $blue;
+        font-weight: 600;
+    }
+    .jackpot-value {
+        font-size: 3.2vw;
+        text-transform: uppercase;
+        color: $green;
+        font-weight: 700;
+    }
+}
+
+.last-tirage-block {
+    height: 27vh;
+    border-radius: 10px;
+    width: 34vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1vh 0.5vw;
+    background-color: whitesmoke;
+    .title {
+        font-size: 1.8vw;
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+}
+
+.column-centered {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 18vh;
+    padding: 0.8vw;
+    width: 33.33%;
+    .title {
+        font-size: 1.6vw;
+        font-weight: 600;
+        text-transform: uppercase;
+        color: $red;
+    }
+    .id-num {
+        font-size: 1.3vw;
+        font-weight: 500;
+    }
+    .time {
+        font-size: 1.4vw;
+        font-weight: 500;
+    }
+    .value {
+        font-size: 1.4vw;
+        font-weight: 700;
+    }
+}
+
+.block-time-with-title {
+    display: block;
+    width: 17vw;
+    margin: 0vh 0.5vw;
+    height: 27vh;
+    .block-time {
+        height: 13vh;
+        border-radius: 10px;
+        margin: 0.75vh 0vw;
+        background-color: white;
+        .label {
+            text-transform: uppercase;
+            font-size: 1.2vw;
+            font-weight: 500;
+        }
+        .value {
+            font-size: 2.8vw;
+            font-weight: 700;
+            color: $green;
+        }
+    }
+    .block-title {
+        border-radius: 10px;
+        width: 100%;
+        margin: 0.75vh 0vw;
+        height: 13vh;
+        line-height: 13vh;
+        margin-top: 10px;
+        background-color: red;
+        font-size: 2.4vw;
+        color: white;
+        font-weight: 700;
+        font-style: italic;
+        text-align: center;
+    }
+}
+
+.simulator-container {
+    height: 28vh;
+    width: 20vw;
+}
+
+.up-container {
+    position: relative;
+}
