@@ -35,7 +35,7 @@ export class PariTypesPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.codesalle = this.tokenStorage.getCodesalle()
-    this.getRepAlgo()
+    this.fnPariTypes()
     this.pariNS = new PariType(
       'non sortant',
       [
@@ -154,9 +154,9 @@ export class PariTypesPageComponent implements OnInit {
     );
   }
 
-  getRepAlgo() {
+  fnPariTypes() {
     try {
-      this.websocket.onexecute('repAlgoList').then(data => {
+      this.websocket.onexecute('pari-types').then(data => {
         if (data !== 'error') {
           this.multiplicateur = data[0].multiplicateur
           this.jackpot = data[0].jackpot

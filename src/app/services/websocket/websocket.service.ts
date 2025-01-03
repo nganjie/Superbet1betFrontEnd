@@ -1,13 +1,14 @@
 import { DatePipe } from '@angular/common';
 import { Injectable } from '@angular/core';
 import { SessionStorageService } from '../session-storage/session-storage.service';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class WebsocketService {
 
-  socket = new WebSocket('ws://localhost:8090');
+  socket = new WebSocket(environment.socket); //92.113.29.142
 
   constructor() { }
 

@@ -1,4 +1,5 @@
 export const environment = {
   production: true,  
-  url:"https://super1bet237.com/api/"
+  url:"http://92.113.29.142:8000/api/",
+  socket:"ws://92.113.29.142:8090"
 };

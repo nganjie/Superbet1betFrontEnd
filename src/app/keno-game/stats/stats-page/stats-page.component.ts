@@ -108,19 +108,62 @@ export class StatsPageComponent implements OnInit {
     this.countTimeService.secondsRemainingSubject.subscribe((sec) => {
       this.secondsRemaining = sec;
     });
+    // setTimeout(() => {
+    //   this.fnStatPage() 
+    // }, 500);
+    // setTimeout(() => {
+    //   this.listBoulesTirages()
+    // }, 700);
+    // setTimeout(() => {
+    //   this.listMultiplicateurs()
+    // }, 900);
+    // setTimeout(() => {
+    //   this.listBoulesPlusTires()
+    // }, 1100);
+    // setTimeout(() => {
+    //   this.listBoulesMoinsTires()
+    // }, 1300);
   }
 
   ngOnInit(): void {
     this.codesalle = this.tokenStorage.getCodesalle()
-    this.getRepAlgo()
-    this.listBoulesTirages()
-    this.listMultiplicateurs()
-    this.listBoulesPlusTires()
-    this.listBoulesMoinsTires()
+    this.fnStatPage()
   }
 
   mestirages: Tirage[] = []
   boules: number[] = []
+
+  fnStatPage(){
+    try{
+        this.websocket.onexecute('stat-page').then(data => {
+            console.log('STAT PAGE:')
+            console.log(data)
+            if (data !== 'error') {
+                this.multiplicateur = data.rep_algo[0].multiplicateur
+                this.jackpot = data.rep_algo[0].jackpot
+                this.megajackpot = data.rep_algo[0].megajackpot
+                this.boulesMoinsTirees = data.lesmoins_tirees
+                this.boulesPlusTirees = data.lesplus_tirees
+                this.multiplicateurs = data.derniers_mult
+                for (let obj of data.derniers_tirages) {
+                  const tab = obj.listeBoules.split(",").map(Number)
+                  tab.pop() // retirer ce dernier element qui s'est ajouter
+                  this.mestirages.push(new Tirage(
+                    obj.numero,
+                    tab,
+                    obj.multiplicateur,
+                    obj.dateHeure
+                  ))
+                }
+            } else {
+                console.log('ERROR:stat-page')
+            }
+        })
+    }catch(error){
+        console.log(error.error)
+    }
+  }
+
   listBoulesTirages() {
     try {
       this.websocket.onexecute('dernierstirages').then(data => {
@@ -139,7 +182,6 @@ export class StatsPageComponent implements OnInit {
           console.log('ERROR:listBoulesTirages')
         }
       })
-
     } catch (error) {
       console.log(error.error);
     }
@@ -181,7 +223,7 @@ export class StatsPageComponent implements OnInit {
     try {
       this.websocket.onexecute('bouleslesplustirees').then(data => {
         if (data !== 'error') {
-          this.multiplicateurs = data
+          this.listBoulesPlusTires = data
         } else {
           console.log('ERROR:listBoulesPlusTires')
         }
@@ -217,6 +259,8 @@ export class StatsPageComponent implements OnInit {
   getRepAlgo() {
     try {
       this.websocket.onexecute('repAlgoList').then(data => {
+        console.log('TEST');
+        console.log(data);
         if (data !== 'error') {
           this.multiplicateur = data[0].multiplicateur
           this.jackpot = data[0].jackpot
@@ -225,7 +269,6 @@ export class StatsPageComponent implements OnInit {
           console.log('ERROR:getRepAlgo')
         }
       })
-
     } catch (error) {
       console.log(error.error);
     }

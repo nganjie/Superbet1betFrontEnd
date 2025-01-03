@@ -66,9 +66,15 @@ export class TiragePageComponent implements OnInit {
     setTimeout(() => {
       this.afterViewInit() 
     }, 1000);
-    setInterval(() => {
+    // setInterval(() => {
+    //   this.acces()
+    // }, 5000)  
+    setTimeout(() => {
       this.acces()
-    }, 5000)      
+    }, 20000);  
+    setTimeout(() => {
+      this.updSalleSync('F')
+    }, 15000);  
     setInterval(() => {
       this.count--
     }, 1000)
@@ -210,7 +216,8 @@ export class TiragePageComponent implements OnInit {
     try {
       this.websocket.onexecute('algoD').then(data => {
         if (data !== 'error') {
-          localStorage.setItem("tirageID", data[0].tirageID);
+          //console.log(data[0].tirageID)
+          //localStorage.setItem("tirageID", data[0].tirageID);
         } else {
           console.log('ERROR:insertTirage')
         }
@@ -273,20 +280,20 @@ export class TiragePageComponent implements OnInit {
 
   tirage: Tirage
   insertTirage() {
-    this.websocket.onexecute('tirage').then(data => {
-      if (data !== 'error') {
-        localStorage.setItem("tirageID", data[0].tirageID);
-      } else {
-        //A revoir
-        console.log('ERROR:insertTirage')
-      }
-    })
-    // this.tirage = new Tirage(this.tokenStorage.getCodesalle())
-    // this.api.insertTirage(this.tirage).subscribe(data => {
-    //   localStorage.setItem("tirageID", data[0].tirageID);
-    // }, err => {
-    //   localStorage.setItem("tirageID", err.error.text)
+    // this.websocket.onexecute('tirage').then(data => {
+    //   if (data !== 'error') {
+    //     localStorage.setItem("tirageID", data[0].tirageID);
+    //   } else {
+    //     //A revoir
+    //     console.log('ERROR:insertTirage')
+    //   }
     // })
+     this.tirage = new Tirage(this.tokenStorage.getCodesalle())
+     this.api.insertTirage(this.tirage).subscribe(data => {
+       localStorage.setItem("tirageID", data[0].tirageID);
+     }, err => {
+       localStorage.setItem("tirageID", err.error.text)
+     })
   }
 
   generateBallsList(): number[] {
