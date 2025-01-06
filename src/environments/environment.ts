@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  url:"http://localhost:8000/api/",
-  socket:"ws://localhost:8090"
+  url:"http://92.113.29.142:8000/api/",
+  socket:"ws://92.113.29.142:8090"
 };
 
 /*    url:'https://super1bet237.com/api/'
