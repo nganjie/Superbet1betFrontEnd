@@ -1,6 +1,8 @@
 {
-    "serverIP": "http://back.super1bet237-cm.com/api/"  
+    "serverIP": "http://back.super1bet237-cm.com/api/" ,
+    "commentaire":"http://back.super1bet237-cm.com/api/  http://localhost:8000/api/"
 }
+
 
 
 

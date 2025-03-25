@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1736960494282,
+  "timestamp": 1742908437565,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -16,7 +16,7 @@
         "/735.54e2d0cfc7bbff72.js",
         "/favicon.ico",
         "/index.html",
-        "/main.81dfc611f87b27cd.js",
+        "/main.5d8fbc995eacd728.js",
         "/manifest.webmanifest",
         "/polyfills.1d3c15cc43f1792d.js",
         "/runtime.17df51a33e61365f.js",
@@ -172,7 +172,7 @@
     "/735.54e2d0cfc7bbff72.js": "7a26d432f64efeec89b186dbb7f78b874dd7516a",
     "/assets/P.SQL": "c732b0cb6c262feca482d4a5f49ae0e4bfa88e66",
     "/assets/abdou.png": "6de4e2638951f2b941f99ff8c05e64010f197d6d",
-    "/assets/app.config.json": "ec7de27b187023a359ec68e1380e6b0973e707c0",
+    "/assets/app.config.json": "112ccae1e3f3079da739c7985e2b8c3dcd4e9786",
     "/assets/avia.jpg": "47247950217351e34775474d7bf734ab4be80af3",
     "/assets/avia.png": "d980f2c20d25a538e6e5388ba68ae099131abe03",
     "/assets/cameroun_armoiries.png": "97084d1008f6f47494ec51f189c2be1146333195",
@@ -295,8 +295,8 @@
     "/fa-v4compatibility.92dce52f885fd838.ttf": "a9d072aca9e0fadc2a7167671ce3d6b18d9cd2cc",
     "/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
     "/hue.8b1818380241e6ac.png": "f81ae627637a684614aa726e206c73ce099a01fd",
-    "/index.html": "6ce76faab5bcb1676c2625a1a2791e5e57910b1e",
-    "/main.81dfc611f87b27cd.js": "a36ef8ee3239ac8ffcc9ab2d76ad19465d7933c0",
+    "/index.html": "96553d63817c7a134556260d2647aac4dccd575d",
+    "/main.5d8fbc995eacd728.js": "fea7cb432f9f5fe266e8f9edce2fee26e629c5cd",
     "/manifest.webmanifest": "d817fcd6f38e3f60ef124392359794bebdc2139a",
     "/polyfills.1d3c15cc43f1792d.js": "30554894b2c0d0974377063fb5e794862231caf5",
     "/primeicons.0112589c5695a9ed.ttf": "ceeb46d594fde5cc507cdf8b70e38e78fe47653c",
