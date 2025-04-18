@@ -1,5 +1,0 @@
-{
-    "serverIP": "https://super1bet237.com/api/"
-}
-
-
